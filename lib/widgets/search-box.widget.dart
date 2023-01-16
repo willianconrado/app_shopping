@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:shopping/widgets/animated-input.widget.dart';
 
 class SearchBox extends StatefulWidget {
   @override
-  State<SearchBox> createState() => _SearchBoxState();
+  _SearchBoxState createState() => _SearchBoxState();
 }
 
 class _SearchBoxState extends State<SearchBox>
@@ -35,9 +36,9 @@ class _SearchBoxState extends State<SearchBox>
         AnimatedInput(
           controller: _controller,
         ),
-        FlatButton(
+        TextButton(
           onPressed: () {
-            !menuOpened ? _controller.forward() : _controller.reverse();
+            !menuOpened ? _controller?.forward() : _controller?.reverse();
             menuOpened = !menuOpened;
           },
           child: AnimatedIcon(
@@ -50,42 +51,3 @@ class _SearchBoxState extends State<SearchBox>
     );
   }
 }
-
-/*
-Container(
-      height: 60,
-      padding: EdgeInsets.only(left: 15),
-      decoration: BoxDecoration(
-        color: Color.fromRGBO(0, 0, 0, 0.1),
-        borderRadius: BorderRadius.all(
-          Radius.circular(128),
-        ),
-      ),
-      child: Row(
-        children: [
-          Icon(Icons.search),
-          Container(
-            width: 300,
-            padding: EdgeInsets.only(left: 10),
-            child: TextFormField(
-              keyboardType: TextInputType.text,
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                labelText: "Search...",
-                labelStyle: TextStyle(
-                  color: Theme.of(context).primaryColor,
-                  fontWeight: FontWeight.w300,
-                  fontSize: 16,
-                ),
-              ),
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.blue,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-    
-    */
