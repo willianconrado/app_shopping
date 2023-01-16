@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping/pages/product.page.dart';
 
@@ -25,26 +26,28 @@ class ProductCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ProductPage(
-                    title: title,
-                    description: description,
-                    image: image,
-                    price: price,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProductPage(
+                      title: title,
+                      description: description,
+                      image: image,
+                      price: price,
+                    ),
                   ),
+                );
+              },
+              child: Hero(
+                tag: image,
+                child: Image.asset(
+                  image,
+                  width: 170,
+                  height: 170,
+                  fit: BoxFit.cover,
                 ),
-              );
-            },
-            child: Image.asset(
-              image,
-              width: 170,
-              height: 170,
-              fit: BoxFit.cover,
-            ),
-          ),
+              )),
           SizedBox(
             height: 10,
           ),
