@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/widgets/animated-input.widget.dart';
+import 'animated-input.widget.dart';
 
 class SearchBox extends StatefulWidget {
+
   @override
   _SearchBoxState createState() => _SearchBoxState();
 }
@@ -14,9 +15,9 @@ class _SearchBoxState extends State<SearchBox>
   @override
   void initState() {
     super.initState();
-    _controller = new AnimationController(
+    _controller = AnimationController(
       vsync: this,
-      duration: Duration(
+      duration: const Duration(
         seconds: 1,
       ),
     );
@@ -30,7 +31,7 @@ class _SearchBoxState extends State<SearchBox>
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Row(/*
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         AnimatedInput(
@@ -48,6 +49,6 @@ class _SearchBoxState extends State<SearchBox>
           ),
         ),
       ],
-    );
+    */);
   }
 }
